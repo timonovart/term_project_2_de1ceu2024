@@ -16,7 +16,7 @@ __pycache__/    # Python cache directory
 
 # KNIME workspace files
 .metadata/
-.knime_lock
+.knimeLock
 .bak
 
 # Temporary files
