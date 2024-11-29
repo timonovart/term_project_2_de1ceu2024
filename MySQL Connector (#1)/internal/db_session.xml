@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="db_session">
+    <config key="Session Info">
+        <entry key="version" type="xint" value="5"/>
+        <entry key="sessionID" type="xstring" value="5d728cb5-fb1d-4639-bb17-b6d02c4189a1"/>
+        <entry key="dbTypeId" type="xstring" value="mysql"/>
+        <entry key="dialectId" type="xstring" value="mysql"/>
+        <entry key="dbURL" type="xstring" value="jdbc:mysql://project2.cv408kmm0zzs.eu-north-1.rds.amazonaws.com:3306/project2"/>
+        <entry key="authenticationType" type="xstring" value="USER_PWD"/>
+        <entry key="dbUser" type="xstring" value="admin"/>
+        <entry key="dbPassword" type="xpassword" value="02CAAAAGMq_QxveL1vZ0EBj2lIZIL1Cq0MeU6Qew=="/>
+        <entry key="host" type="xstring" value="project2.cv408kmm0zzs.eu-north-1.rds.amazonaws.com"/>
+    </config>
+    <config key="Driver Definition">
+        <entry key="driverId" type="xstring" value="built-in-mysql-8.0.29"/>
+        <entry key="driverName" type="xstring" value="Driver for MySQL v.8.0.29"/>
+        <entry key="driverVersion" type="xstring" value="8.0.0"/>
+        <entry key="driverClass" type="xstring" value="com.mysql.cj.jdbc.Driver"/>
+        <entry key="driverDescription" type="xstring" value=""/>
+        <entry key="driverOrigin" type="xstring" value="EXTENSION"/>
+        <entry key="deprecated" type="xboolean" value="false"/>
+    </config>
+    <config key="Attributes"/>
+</config>
