@@ -1,0 +1,23 @@
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# System files
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Node.js (npm) and Python cache
+node_modules/   # Node.js dependencies
+*.pyc           # Python bytecode
+__pycache__/    # Python cache directory
+
+
+# KNIME workspace files
+.metadata/
+.knime_lock
+.bak
+
+# Temporary files
+tmp/
