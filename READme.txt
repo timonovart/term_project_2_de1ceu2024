@@ -59,6 +59,33 @@ Any further information about the data may be found on the links above. It is ea
 
 - [Data part — @Saad]
 
+- An AWS account was created for extracting, wrangling, storing, manipulating and serving the datasets that are used in the project.
+
+- Data Files for World Happiness Report at a yearly level were extracted from the Kaggle data source mentioned above. It contained 9 csv files (one for each year) with happiness scores along with other variables on a country level. 
+
+- These 9 CSV files were stored in AWS S3 bucket.
+
+- A notebook instance was created within Amazon Sagemaker for using Jupyter Notebook instance that connects to S3 for data extraction and wrangling.
+ 
+- To allow Sagemaker to access files from S3, an IAM user policy was created that granted list, read and write access to Sagemaker on the S3 bucket.
+ 
+- Once Sagemaker was able to access the csv files with S3, we used Jupyter Notebooks to access files in S3 and wrangled them using python. 
+- Wrangling steps:
+	o	Separate yearly csv combined together in a single dataset
+	o	Year column extracted from csv name and appended as a column
+	o	Data filtered for just the European countries
+	o	European countries with all 9 years’ worth of data retained and rest filtered
+
+
+- To store this wrangled data, we created an RDS within AWS to store the MYSQL Database that would host this final dataset that we want to access in KNIME. 
+
+- The RDS was set to be publicly accessible so all group members could easily access the data at their end. 
+
+- A security group was created using EC2 instance to manage inbound and outbound rules for RDS. It allowed access to the Jupyter Notebooks (within Sagemaker) to create a MYSQL database with in RDS, that would host our data. 
+
+- Once all the permissions were sorted, we pushed the final dataset from the Sagemaker to the RDS using MySQL connector and a new table containing data we want to access in Knime was created. 
+
+
 - File 'data2.csv' is stored in the data folder that is located in the project folder and is referenced locally;
 
 - String replacer node is used to correct the country names, so that they look the same in both tables in order to properly join them (Slovak Repiblic -> Slovakia, Russian Federation -> Russia amendments are made in the data2);
