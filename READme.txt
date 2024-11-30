@@ -63,7 +63,10 @@ Any further information about the data may be found on the links above. It is ea
 
 - Data Files for World Happiness Report at a yearly level were extracted from the Kaggle data source mentioned above. It contained 9 csv files (one for each year) with happiness scores along with other variables on a country level. 
 
-- These 9 CSV files were stored in AWS S3 bucket.
+- These 9 CSV files were stored in AWS S3 bucket. The source of this file as mentioned above is:
+https://www.kaggle.com/datasets/sazidthe1/global-happiness-scores-and-factors
+
+- These yearly files would be downloaded and converted into a single dataframe (discussed below). 
 
 - A notebook instance was created within Amazon Sagemaker for using Jupyter Notebook instance that connects to S3 for data extraction and wrangling.
  
@@ -85,6 +88,23 @@ Any further information about the data may be found on the links above. It is ea
 
 - Once all the permissions were sorted, we pushed the final dataset from the Sagemaker to the RDS using MySQL connector and a new table containing data we want to access in Knime was created. 
 
+- The final RDS data frame contains the following variables at a country and year level:
+	- happiness score
+	- gdp_per_capita
+	- social_support
+	- healthy_life_expectancy
+	- freedom_to_make_life_choices
+	- generosity
+	- perceptions_of_corruption
+
+
+- For the stand alone csv file containing Unemployment rate, Internet access %, Urban population % we used the world bank website https://databank.worldbank.org/.
+
+- Data for European countries which are present in our RDS dataset was extracted from 2015 till 2023 at a country and yearly level. 
+
+- This standalone csv file would be another input into Knime data model. 
+
+- It would be joined to our RDS dataframe for enriching the data. 
 
 - File 'data2.csv' is stored in the data folder that is located in the project folder and is referenced locally;
 
