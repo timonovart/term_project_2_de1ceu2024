@@ -5,7 +5,7 @@
     <config key="table_references">
         <entry key="array-size" type="xint" value="0"/>
     </config>
-    <entry key="table_implementation" type="xstring" value="org.knime.core.data.columnar.table.UnsavedColumnarContainerTable"/>
+    <entry key="table_implementation" type="xstring" value="org.knime.core.data.columnar.table.ColumnarContainerTableLoader$SavedColumnarContainerTable"/>
     <config key="table_derived_settings">
         <entry key="table_size" type="xlong" value="297"/>
         <entry key="columnstore_factory_type" type="xstring" value="org.knime.core.columnar.arrow.ArrowColumnStoreFactory"/>

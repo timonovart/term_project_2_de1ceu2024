@@ -21,6 +21,10 @@
     </config>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
     <entry key="state" type="xstring" value="EXECUTED"/>
+    <config key="nodecontainer_message">
+        <entry key="type" type="xstring" value="ERROR"/>
+        <entry key="message" type="xstring" value="I/O error while saving internals: /Users/vasilisavashenko/knime-workspace/term_project_2_de1ceu2024/Python Script (#11)/internal/console_b.arrow"/>
+    </config>
     <entry key="factory" type="xstring" value="org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory"/>
     <entry key="node-name" type="xstring" value="Python Script"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME Python 3 - Scripting Nodes"/>
@@ -61,6 +65,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="770ce229-96fb-4e43-b67b-0b710743504c"/>
+        <entry key="file_store_id" type="xstring" isnull="true" value=""/>
     </config>
 </config>

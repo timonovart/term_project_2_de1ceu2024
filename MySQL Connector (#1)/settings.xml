@@ -914,6 +914,10 @@
     </config>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
     <entry key="state" type="xstring" value="EXECUTED"/>
+    <config key="nodecontainer_message">
+        <entry key="type" type="xstring" value="ERROR"/>
+        <entry key="message" type="xstring" value="Unable to save internals: Cannot invoke &quot;org.knime.database.session.DBSessionInformation.getID()&quot; because &quot;sessionInfo&quot; is null"/>
+    </config>
     <entry key="factory" type="xstring" value="org.knime.database.extension.mysql.node.connector.MySQLDBConnectorNodeFactory"/>
     <entry key="node-name" type="xstring" value="MySQL Connector"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME database extensions"/>
@@ -941,6 +945,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="a20d2eba-d0d0-46fa-bb5a-0deff7833e95"/>
+        <entry key="file_store_id" type="xstring" isnull="true" value=""/>
     </config>
 </config>
