@@ -6,17 +6,8 @@
         <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
     </config>
     <config key="model">
-        <config key="horizontalColumn">
-            <entry key="selected" type="xstring" value="First column name"/>
-            <config key="compatibleTypes_Internals">
-                <entry key="array-size" type="xint" value="3"/>
-                <entry key="0" type="xstring" value="org.knime.core.data.StringValue"/>
-                <entry key="1" type="xstring" value="org.knime.core.data.DataValue"/>
-                <entry key="2" type="xstring" value="org.knime.core.data.NominalValue"/>
-            </config>
-        </config>
-        <config key="verticalColumn">
-            <entry key="selected" type="xstring" value="Second column name"/>
+        <config key="categoryColumn">
+            <entry key="selected" type="xstring" value="country"/>
             <config key="compatibleTypes_Internals">
                 <entry key="array-size" type="xint" value="3"/>
                 <entry key="0" type="xstring" value="org.knime.core.data.StringValue"/>
@@ -25,16 +16,33 @@
             </config>
         </config>
         <entry key="aggregationMethod" type="xstring" value="NONE"/>
-        <config key="valueColumn">
-            <entry key="selected" type="xstring" value="Correlation value"/>
-            <config key="compatibleTypes_Internals">
-                <entry key="array-size" type="xint" value="6"/>
-                <entry key="0" type="xstring" value="org.knime.core.data.DoubleValue"/>
-                <entry key="1" type="xstring" value="org.knime.core.data.DataValue"/>
-                <entry key="2" type="xstring" value="org.knime.core.data.ComplexNumberValue"/>
-                <entry key="3" type="xstring" value="org.knime.core.data.FuzzyNumberValue"/>
-                <entry key="4" type="xstring" value="org.knime.core.data.FuzzyIntervalValue"/>
-                <entry key="5" type="xstring" value="org.knime.core.data.BoundedValue"/>
+        <config key="frequencyColumns">
+            <config key="selected_Internals">
+                <entry key="array-size" type="xint" value="1"/>
+                <entry key="0" type="xstring" value="diff"/>
+            </config>
+            <entry key="mode" type="xstring" value="MANUAL"/>
+            <config key="patternFilter">
+                <entry key="pattern" type="xstring" value=""/>
+                <entry key="isCaseSensitive" type="xboolean" value="false"/>
+                <entry key="isInverted" type="xboolean" value="false"/>
+            </config>
+            <config key="manualFilter">
+                <config key="manuallySelected">
+                    <entry key="array-size" type="xint" value="1"/>
+                    <entry key="0" type="xstring" value="diff"/>
+                </config>
+                <config key="manuallyDeselected">
+                    <entry key="array-size" type="xint" value="2"/>
+                    <entry key="0" type="xstring" value="hap2015"/>
+                    <entry key="1" type="xstring" value="hap2023"/>
+                </config>
+                <entry key="includeUnknownColumns" type="xboolean" value="false"/>
+            </config>
+            <config key="typeFilter">
+                <config key="selectedTypes">
+                    <entry key="array-size" type="xint" value="0"/>
+                </config>
             </config>
         </config>
         <entry key="generateImage" type="xboolean" value="false"/>
@@ -43,30 +51,33 @@
     </config>
     <config key="variables"/>
     <config key="view">
-        <entry key="title" type="xstring" value="Heatmap"/>
-        <entry key="axisExtentMethod" type="xstring" value="COLUMN_DOMAIN"/>
+        <entry key="limitRows" type="xstring" value="AUTOMATIC"/>
+        <entry key="maxRows" type="xint" value="100"/>
+        <entry key="title" type="xstring" value="Happiness level change from 2015 to 2023"/>
+        <entry key="useCustomCategoryAxisLabel" type="xboolean" value="true"/>
+        <entry key="customCategoryAxisLabel" type="xstring" value=" "/>
+        <entry key="useCustomFrequencyAxisLabel" type="xboolean" value="true"/>
+        <entry key="customFrequencyAxisLabel" type="xstring" value="Happiness difference"/>
         <config key="manualAxisLimits">
-            <entry key="xAxisManualMin" type="xdouble" value="0.0"/>
-            <entry key="xAxisManualMax" type="xdouble" value="100.0"/>
-            <entry key="yAxisManualMin" type="xdouble" value="0.0"/>
-            <entry key="yAxisManualMax" type="xdouble" value="100.0"/>
+            <entry key="min" type="xdouble" value="0.0"/>
+            <entry key="max" type="xdouble" value="100.0"/>
         </config>
-        <entry key="useCustomXAxisLabel" type="xboolean" value="true"/>
-        <entry key="customXAxisLabel" type="xstring" value=""/>
-        <entry key="useCustomYAxisLabel" type="xboolean" value="true"/>
-        <entry key="customYAxisLabel" type="xstring" value=""/>
-        <entry key="showValueLabels" type="xboolean" value="false"/>
-        <entry key="showColormap" type="xboolean" value="true"/>
-        <entry key="colorMapLabel" type="xstring" value=""/>
+        <entry key="axisExtentMethod" type="xstring" value="AUTO"/>
+        <entry key="direction" type="xstring" value="HORIZONTAL"/>
+        <entry key="chartType" type="xstring" value="GROUPED"/>
+        <entry key="barGroups" type="xstring" value="CATEGORIES"/>
+        <entry key="showLegend" type="xboolean" value="false"/>
+        <entry key="showValues" type="xboolean" value="true"/>
         <entry key="allowImageDownload" type="xboolean" value="true"/>
         <entry key="showTooltip" type="xboolean" value="true"/>
+        <entry key="selectionMode" type="xstring" value="EDIT"/>
         <entry key="enableAnimation" type="xboolean" value="true"/>
     </config>
     <config key="view_variables"/>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
     <entry key="state" type="xstring" value="EXECUTED"/>
-    <entry key="factory" type="xstring" value="org.knime.base.views.node.heatmap.HeatmapNodeFactory"/>
-    <entry key="node-name" type="xstring" value="Heatmap"/>
+    <entry key="factory" type="xstring" value="org.knime.base.views.node.barchart.BarChartNodeFactory"/>
+    <entry key="node-name" type="xstring" value="Bar Chart"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME Views"/>
     <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base.views"/>
     <entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
@@ -80,7 +91,7 @@
         <config key="Input Table"/>
         <config key="Output Image"/>
     </config>
-    <entry key="name" type="xstring" value="Heatmap"/>
+    <entry key="name" type="xstring" value="Bar Chart"/>
     <entry key="hasContent" type="xboolean" value="true"/>
     <entry key="isInactive" type="xboolean" value="false"/>
     <config key="ports"/>
@@ -101,6 +112,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="941304f4-b7e8-4eab-82c1-a8666898c686"/>
+        <entry key="file_store_id" type="xstring" value="3361245d-8296-4fc5-a28a-00813c42b5a1"/>
     </config>
 </config>

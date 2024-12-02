@@ -12,7 +12,7 @@
     </config>
     <config key="view">
         <config key="xAxisColumn">
-            <entry key="selected" type="xstring" value="mob_internet_per_capita_gb"/>
+            <entry key="selected" type="xstring" value="gdp_per_capita"/>
             <config key="compatibleTypes_Internals">
                 <entry key="array-size" type="xint" value="6"/>
                 <entry key="0" type="xstring" value="org.knime.core.data.DoubleValue"/>
@@ -51,16 +51,16 @@
         </config>
         <entry key="maxRows" type="xint" value="2500"/>
         <entry key="title" type="xstring" value="Scatter Plot"/>
-        <entry key="axisExtentMethod" type="xstring" value="AUTO"/>
+        <entry key="axisExtentMethod" type="xstring" value="MANUAL"/>
         <config key="manualAxisLimits">
-            <entry key="xAxisManualMin" type="xdouble" value="0.0"/>
-            <entry key="xAxisManualMax" type="xdouble" value="100.0"/>
-            <entry key="yAxisManualMin" type="xdouble" value="0.0"/>
-            <entry key="yAxisManualMax" type="xdouble" value="100.0"/>
+            <entry key="xAxisManualMin" type="xdouble" value="0.6"/>
+            <entry key="xAxisManualMax" type="xdouble" value="2.4"/>
+            <entry key="yAxisManualMin" type="xdouble" value="4.0"/>
+            <entry key="yAxisManualMax" type="xdouble" value="8.0"/>
         </config>
         <entry key="useCustomXAxisLabel" type="xboolean" value="false"/>
         <entry key="customXAxisLabel" type="xstring" isnull="true" value=""/>
-        <entry key="xAxisScale" type="xstring" value="LOG"/>
+        <entry key="xAxisScale" type="xstring" value="VALUE"/>
         <entry key="useCustomYAxisLabel" type="xboolean" value="false"/>
         <entry key="customYAxisLabel" type="xstring" isnull="true" value=""/>
         <entry key="yAxisScale" type="xstring" value="VALUE"/>
@@ -106,6 +106,6 @@
     </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" isnull="true" value=""/>
+        <entry key="file_store_id" type="xstring" value="ec1da619-2751-4dc1-a585-9e9cbbea8186"/>
     </config>
 </config>

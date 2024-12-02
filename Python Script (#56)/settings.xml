@@ -6,7 +6,7 @@
         <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
     </config>
     <config key="model">
-        <entry key="script" type="xstring" value="import knime.scripting.io as knio%%00010import matplotlib.pyplot as plt%%00010%%00010df = knio.input_tables[0].to_pandas()%%00010years = df['year'].unique()%%00010%%00010num_years = len(years)%%00010fig, axes = plt.subplots(3, 3, figsize=(15, 15), sharey=True)%%00010%%00010# Plot histograms for each year%%00010for ax, year in zip(axes.reshape(-1), years):%%00010    df[df['year'] == year]['happiness_score'].hist(ax=ax, bins=(4,4.5,5,5.5,6,6.5,7,7.5,8), color='pink', edgecolor='red', alpha=.7)%%00010    ax.set_title(f'Year: {year}')%%00010    ax.set_xlabel('Target')%%00010    ax.set_ylabel('Frequency')%%00010    ax.set_xlim(3.5,8.5)%%00010plt.tight_layout()%%00010knio.output_view = knio.view(fig)%%00010"/>
+        <entry key="script" type="xstring" value="import knime.scripting.io as knio%%00010import pandas as pd%%00010%%00010df = knio.input_tables[0].to_pandas()%%00010%%00010countries = df.country.unique()%%00010hap2015 = []%%00010hap2023 = []%%00010for country in countries:%%00010    hap2015.append(float(df.happiness_score[(df.country == country) &amp; (df.year == 2015)].iloc[0]))%%00010    hap2023.append(float(df.happiness_score[(df.country == country) &amp; (df.year == 2023)].iloc[0]))%%00010df_diff = pd.DataFrame({'country': countries, 'hap2015': hap2015, 'hap2023': hap2023})%%00010df_diff['diff'] = df_diff.hap2023 - df_diff.hap2015%%00010%%00010knio.output_tables[0] = knio.Table.from_pandas(df_diff.sort_values('diff', ascending=False))%%00010"/>
         <entry key="python3_command" type="xstring" value=""/>
     </config>
     <config key="variables">
@@ -21,8 +21,8 @@
     </config>
     <entry key="customDescription" type="xstring" isnull="true" value=""/>
     <entry key="state" type="xstring" value="EXECUTED"/>
-    <entry key="factory" type="xstring" value="org.knime.python3.scripting.nodes2.view.PythonViewNodeFactory"/>
-    <entry key="node-name" type="xstring" value="Python View"/>
+    <entry key="factory" type="xstring" value="org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory"/>
+    <entry key="node-name" type="xstring" value="Python Script"/>
     <entry key="node-bundle-name" type="xstring" value="KNIME Python 3 - Scripting Nodes"/>
     <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.python3.scripting.nodes"/>
     <entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
@@ -39,14 +39,28 @@
                 <entry key="object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
             </config>
         </config>
+        <config key="Output table">
+            <config key="port_0">
+                <entry key="object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+            </config>
+        </config>
         <config key="Output image"/>
+        <config key="Output object (pickled)"/>
     </config>
-    <entry key="name" type="xstring" value="Python View"/>
+    <entry key="name" type="xstring" value="Python Script"/>
     <entry key="hasContent" type="xboolean" value="true"/>
     <entry key="isInactive" type="xboolean" value="false"/>
-    <config key="ports"/>
+    <config key="ports">
+        <config key="port_1">
+            <entry key="index" type="xint" value="1"/>
+            <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 33, Cols: 4"/>
+            <entry key="port_dir_location" type="xstring" value="port_1"/>
+        </config>
+    </config>
     <config key="filestores">
         <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-        <entry key="file_store_id" type="xstring" value="899d96df-ac1f-4cdf-8d70-f15780c59c6a"/>
+        <entry key="file_store_id" type="xstring" value="86235153-9a37-40b4-89b4-f8da518c8ffb"/>
     </config>
 </config>
