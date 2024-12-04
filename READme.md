@@ -1,3 +1,7 @@
+The presentation and the report are saved in the '0 Presentation and Report' folder.
+
+
+
 # Requirements
 
 - To run the project there are two additional packages that are required in KNIME:
