@@ -8,6 +8,9 @@ https://hub.knime.com/knime/extensions/org.knime.features.database/latest
 2. Python Script:
 https://hub.knime.com/knime/extensions/org.knime.features.python3.scripting/latest/org.knime.python3.scripting.nodes2.script.PythonScriptNodeFactory
 
+3. Column Expression: 
+https://hub.knime.com/knime/extensions/org.knime.features.expressions/latest
+
 The packages may be installed by dragging the icon from the website to the KNIME window.
 
 - The data accessed through AWS cloud with the following credentials:
